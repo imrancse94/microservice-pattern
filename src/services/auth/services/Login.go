@@ -2,15 +2,14 @@ package Services
 
 import (
 	"auth/models"
-	"auth/requests"
 )
 
 // Login user login function
-func Login(input requests.LoginRequest) (data interface{}, error string) {
+func Login(email string, password string) (data interface{}, error string) {
 
-	user := models.GetUserByEmail(input.Email)
+	user := models.GetUserByEmail(email)
 
-	if !CheckPasswordHash(input.Password, user.Password) {
+	if !CheckPasswordHash(password, user.Password) {
 		return "", "Invalid email or password"
 	}
 

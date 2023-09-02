@@ -32,17 +32,23 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.Login
 	fmt.Println("Test Mux", req["id"], req["name"])*/
 	//request := requests.LoginRequest{}
 	//Helper.Request(r, &request)
-	//userData, message := Services.Login(request)
+	userData, message := Services.Login(req.Email, req.Password)
+
+	fmt.Println("ddd", userData)
+	//data := make(map[string]string)
+
 	data := make(map[string]string)
-	data["email"] = req.Email
-	data["password"] = req.Password
-	userData := &pb.LoginResponse{
+
+	//data["email"] = requestValue
+	//data["password"] = ""
+	//data["name"] = req.
+	response := &pb.LoginResponse{
 		Status: 100,
-		Data:   nil,
-		Error:  req.Email,
+		Data:   data,
+		Error:  message,
 	}
 
-	return userData, nil
+	return response, nil
 
 }
 
