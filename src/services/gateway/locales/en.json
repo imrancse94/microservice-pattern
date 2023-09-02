@@ -1,0 +1,10 @@
+{
+  "Stay a while and listen {{.amount}}": "Stay a while and listen {{.amount}}",
+  "success": "success",
+  "person": {
+    "one": "person",
+    "other": "people"
+  }
+
+}
+
