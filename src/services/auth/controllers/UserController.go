@@ -35,7 +35,7 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.Login
 	//userData, message := Services.Login(request)
 	userData := &pb.LoginResponse{
 		Status: 100,
-		Data:   nil,
+		Data:   nill,
 		Error:  req.Email,
 	}
 
