@@ -5,6 +5,7 @@ import (
 	"crypto/rsa"
 	"crypto/x509"
 	"encoding/base64"
+	"encoding/json"
 	"encoding/pem"
 	"fmt"
 	"gateway/Helper"
@@ -23,6 +24,10 @@ import (
 	"strconv"
 )
 
+type preparedata struct {
+	data interface{}
+}
+
 func Login(w http.ResponseWriter, r *http.Request) {
 	/*req := mux.Vars(r)
 	fmt.Println("Test Mux", req["id"], req["name"])*/
@@ -36,9 +41,14 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		Password: request.Password,
 	})
 
-	//data, _ := json.MarshalIndent(userData.Data, "", " ")
 	data := string(userData.Data)
-	fmt.Println("Test", data, err)
+	p := preparedata{}
+
+	json.Unmarshal([]byte(data), &p.data)
+
+	//resData = interface{}
+
+	fmt.Println("Test", data, p.data)
 
 	logData := logger.LogData{}
 	logData.Action = "LOGIN"
@@ -51,7 +61,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	res := response.Response{
 		StatusCode: statusCode,
 		Message:    message, //localize.Trans(message, ""),
-		Data:       userData,
+		Data:       p.data,
 	}
 
 	logData.Data = res

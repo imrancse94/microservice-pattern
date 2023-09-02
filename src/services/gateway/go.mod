@@ -7,7 +7,7 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/mux v1.8.0
-	github.com/imrancse94/microservice-pattern v0.0.0-20230902182417-d4964c91ba30
+	github.com/imrancse94/microservice-pattern v0.0.0-20230902190254-0beda1a78397
 	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.5.1
 	github.com/nicksnyder/go-i18n/v2 v2.2.1
