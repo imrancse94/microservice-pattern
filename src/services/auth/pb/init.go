@@ -2,7 +2,6 @@ package pb
 
 import (
 	"fmt"
-	"github.com/imrancse94/microservice-pattern/src/protobuf"
 	"golang.org/x/net/context"
 )
 

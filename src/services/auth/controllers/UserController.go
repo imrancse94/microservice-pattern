@@ -15,7 +15,7 @@ import (
 	"encoding/base64"
 	"encoding/pem"
 	"fmt"
-	pb "github.com/imrancse94/microservice-pattern/src/protobuf"
+	pb "github.com/imrancse94/microservice-pattern/src/protobuf/auth"
 	"net/http"
 	"strconv"
 )

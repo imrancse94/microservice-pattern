@@ -17,7 +17,7 @@ import (
 	"gateway/requests"
 	"gateway/response"
 	Services "gateway/services"
-	pb "github.com/imrancse94/microservice-pattern/src/protobuf"
+	pb "github.com/imrancse94/microservice-pattern/src/protobuf/auth"
 	"golang.org/x/net/context"
 	"net/http"
 	"strconv"

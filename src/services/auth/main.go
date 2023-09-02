@@ -8,7 +8,7 @@ import (
 	"auth/models"
 	"context"
 	"fmt"
-	"github.com/imrancse94/microservice-pattern/src/protobuf"
+	"github.com/imrancse94/microservice-pattern/src/protobuf/auth"
 	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
 	"log"
@@ -43,7 +43,7 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 	s := controllers.Server{}
-	protobuf.RegisterAuthServiceServer(grpcServer, &s)
+	auth.RegisterAuthServiceServer(grpcServer, &s)
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %s", err)

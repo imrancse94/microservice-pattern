@@ -3,7 +3,7 @@ package auth
 import (
 	"fmt"
 	"gateway/grpc/auth/config"
-	pb "github.com/imrancse94/microservice-pattern/src/protobuf"
+	pb "github.com/imrancse94/microservice-pattern/src/protobuf/auth"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
