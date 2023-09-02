@@ -3,21 +3,21 @@ module gateway
 go 1.18
 
 require (
-	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
+	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/mux v1.8.0
 	github.com/imrancse94/microservice-pattern v0.0.0-20230902125242-cbf3b1ff3ddf
 	github.com/jinzhu/gorm v1.9.16
-	github.com/joho/godotenv v1.4.0
-	github.com/nicksnyder/go-i18n/v2 v2.2.0
+	github.com/joho/godotenv v1.5.1
+	github.com/nicksnyder/go-i18n/v2 v2.2.1
 	golang.org/x/crypto v0.12.0
 	golang.org/x/net v0.14.0
 	golang.org/x/text v0.13.0
 	google.golang.org/grpc v1.57.0
 	google.golang.org/protobuf v1.31.0
 	gorm.io/driver/mysql v1.3.4
-	gorm.io/gorm v1.23.6
+	gorm.io/gorm v1.25.4
 )
 
 require (
