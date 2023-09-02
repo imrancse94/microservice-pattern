@@ -36,7 +36,9 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		Password: request.Password,
 	})
 
-	fmt.Println("Test", userData, err)
+	//data, _ := json.MarshalIndent(userData.Data, "", " ")
+	data := string(userData.Data)
+	fmt.Println("Test", data, err)
 
 	logData := logger.LogData{}
 	logData.Action = "LOGIN"

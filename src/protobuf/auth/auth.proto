@@ -34,7 +34,7 @@ message LoginRequest {
 message LoginResponse {
   int64 status = 1;
   string message = 2;
-  bytes data = 3;
+  string data = 3;
 }
 
 // Validate
