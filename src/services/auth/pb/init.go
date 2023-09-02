@@ -2,14 +2,15 @@ package pb
 
 import (
 	"fmt"
+	"github.com/imrancse94/microservice-pattern/src/protobuf"
 	"golang.org/x/net/context"
 )
 
 type Server struct {
-	UnsafeAuthServiceServer
+	protobuf.UnsafeAuthServiceServer
 }
 
-func (s *Server) Login(ctx context.Context, req *LoginRequest) (res *LoginResponse, err error) {
+func (s *Server) Login(ctx context.Context, req *protobuf.LoginRequest) (res *protobuf.LoginResponse, err error) {
 
 	fmt.Println("Email", req.Email)
 	fmt.Println("Password", req.Password)
@@ -18,7 +19,7 @@ func (s *Server) Login(ctx context.Context, req *LoginRequest) (res *LoginRespon
 	//request := requests.LoginRequest{}
 	//Helper.Request(r, &request)
 	//userData, message := Services.Login(request)
-	userData := &LoginResponse{
+	userData := &protobuf.LoginResponse{
 		Status: 100,
 		Data:   nil,
 		Error:  "No error",
@@ -28,9 +29,9 @@ func (s *Server) Login(ctx context.Context, req *LoginRequest) (res *LoginRespon
 
 }
 
-func (s *Server) Register(ctx context.Context, req *RegisterRequest) (res *RegisterResponse, error error) {
+func (s *Server) Register(ctx context.Context, req *protobuf.RegisterRequest) (res *protobuf.RegisterResponse, error error) {
 
-	userData := &RegisterResponse{
+	userData := &protobuf.RegisterResponse{
 		Status: 100,
 		Error:  "No error",
 	}
@@ -38,9 +39,9 @@ func (s *Server) Register(ctx context.Context, req *RegisterRequest) (res *Regis
 	return userData, nil
 }
 
-func (s *Server) Validate(ctx context.Context, req *ValidateRequest) (res *ValidateResponse, error error) {
+func (s *Server) Validate(ctx context.Context, req *protobuf.ValidateRequest) (res *protobuf.ValidateResponse, error error) {
 
-	userData := &ValidateResponse{
+	userData := &protobuf.ValidateResponse{
 		Status: 100,
 		Error:  "No error",
 	}

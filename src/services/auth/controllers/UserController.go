@@ -5,7 +5,6 @@ import (
 	"auth/constant"
 	"auth/localize"
 	"auth/models"
-	"auth/pb"
 	"auth/requests"
 	"auth/response"
 	Services "auth/services"
@@ -16,6 +15,7 @@ import (
 	"encoding/base64"
 	"encoding/pem"
 	"fmt"
+	pb "github.com/imrancse94/microservice-pattern/src/protobuf"
 	"net/http"
 	"strconv"
 )
