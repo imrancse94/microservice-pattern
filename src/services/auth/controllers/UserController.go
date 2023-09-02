@@ -33,6 +33,9 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.Login
 	//request := requests.LoginRequest{}
 	//Helper.Request(r, &request)
 	//userData, message := Services.Login(request)
+	data := make(map[string]string)
+	data["email"] = req.Email
+	data["password"] = req.Password
 	userData := &pb.LoginResponse{
 		Status: 100,
 		Data:   nil,

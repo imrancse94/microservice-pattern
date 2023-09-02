@@ -4,6 +4,7 @@ syntax = "proto3";
 
 package protobuf;
 
+
 option go_package = "./protobuf";
 
 service AuthService {
@@ -34,7 +35,7 @@ message LoginRequest {
 message LoginResponse {
   int64 status = 1;
   string error = 2;
-  bytes data = 3;
+ map<string,string> Data = 3;
 }
 
 // Validate
