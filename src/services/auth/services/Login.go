@@ -4,13 +4,18 @@ import (
 	"auth/models"
 )
 
+type LoginServiceResponse struct {
+	jwt  models.Token
+	user models.User
+}
+
 // Login user login function
 func Login(email string, password string) (data interface{}, error string) {
 
 	user := models.GetUserByEmail(email)
 
 	if !CheckPasswordHash(password, user.Password) {
-		return "", "Invalid email or password"
+		return nil, "Invalid email or password"
 	}
 
 	return CreateTokenDataByUser(user)

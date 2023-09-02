@@ -37,14 +37,14 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.Login
 	fmt.Println("ddd", userData)
 	//data := make(map[string]string)
 
-	data := make(map[string]string)
+	//data := make(map[string]string)
 
 	//data["email"] = requestValue
 	//data["password"] = ""
 	//data["name"] = req.
 	response := &pb.LoginResponse{
 		Status: 100,
-		Data:   data,
+		Data:   nil,
 		Error:  message,
 	}
 

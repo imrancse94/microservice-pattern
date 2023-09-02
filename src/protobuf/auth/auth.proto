@@ -25,15 +25,7 @@ message RegisterResponse {
   string error = 2;
 }
 
-// Login
-message Pair {
-  string key = 1;
-  string value = 2;
-}
 
-message Dictionary {
-  repeated Pair pairs = 1;
-}
 message LoginRequest {
   string email = 1;
   string password = 2;
@@ -41,8 +33,8 @@ message LoginRequest {
 
 message LoginResponse {
   int64 status = 1;
-  string error = 2;
-  Dictionary Data = 3;
+  string message = 2;
+  string data = 3;
 }
 
 // Validate

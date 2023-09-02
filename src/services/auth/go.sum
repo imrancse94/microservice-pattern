@@ -30,8 +30,8 @@ github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/
 github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
 github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
 github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
-github.com/imrancse94/microservice-pattern v0.0.0-20230902125242-cbf3b1ff3ddf h1:fnEEiP5EusJay6A45Rb9x7hvnQLzXjP2JeLwKNjfsn4=
-github.com/imrancse94/microservice-pattern v0.0.0-20230902125242-cbf3b1ff3ddf/go.mod h1:J0i6OcExdkWWbpXYXXMJatYT1VO0z81wPALd4mMlLMY=
+github.com/imrancse94/microservice-pattern v0.0.0-20230902163027-78cfbb538c10 h1:8Vg8uq4Sc/dM55zqTN9qMWorNMJt4ewvTl0bUb4BeLM=
+github.com/imrancse94/microservice-pattern v0.0.0-20230902163027-78cfbb538c10/go.mod h1:J0i6OcExdkWWbpXYXXMJatYT1VO0z81wPALd4mMlLMY=
 github.com/jinzhu/gorm v1.9.16 h1:+IyIjPEABKRpsu/F8OvDPy9fyQlgsg2luMV2ZIH5i5o=
 github.com/jinzhu/gorm v1.9.16/go.mod h1:G3LB3wezTOWM2ITLzPxEXgSkOXAntiLHS7UdBefADcs=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=
