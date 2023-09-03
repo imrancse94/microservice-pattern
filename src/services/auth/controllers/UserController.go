@@ -24,6 +24,26 @@ type Server struct {
 	pb.UnsafeAuthServiceServer
 }
 
+func PreparePermission(p []models.RolePage) []*pb.PermissionAssoc {
+	var permissionAssoc []*pb.PermissionAssoc
+	for _, s := range p {
+		permissionAssoc = append(permissionAssoc, &pb.PermissionAssoc{
+			Id:                int64(s.ID),
+			UserId:            int64(s.UserID),
+			PermissionVersion: int64(s.PermissionVersion),
+			PageId:            int64(s.PageID),
+			PageName:          s.PageName,
+			ParentId:          int64(s.ParentID),
+			IsIndex:           int64(s.IsIndex),
+			Icon:              s.Icon,
+			PermissionName:    s.PermissionName,
+			Submenu:           PreparePermission(s.Submenu),
+		})
+	}
+	fmt.Println("permissionAssoc", permissionAssoc)
+	return permissionAssoc
+}
+
 func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.LoginResponse, error error) {
 	/*req := mux.Vars(r)
 	fmt.Println("Test Mux", req["id"], req["name"])*/
@@ -42,12 +62,13 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.Login
 			CreatedAt: userData.User.CreatedAt,
 			UpdatedAt: userData.User.UpdatedAt,
 		},
-		/*Permission: &pb.Permission{
-			PermissionList: userData.Permissions.PermissionList,
-		}*/
+		Permission: &pb.Permission{
+			PermissionList:  userData.Permissions.PermissionList,
+			PermissionAssoc: PreparePermission(userData.Permissions.PermissionAssoc),
+		},
 	}
 
-	fmt.Println("c", userData)
+	//fmt.Println("c", userData.Permissions.PermissionAssoc)
 
 	//data := make(map[string]string)
 

@@ -5,7 +5,6 @@ import (
 	"crypto/rsa"
 	"crypto/x509"
 	"encoding/base64"
-	"encoding/json"
 	"encoding/pem"
 	"fmt"
 	"gateway/Helper"
@@ -41,14 +40,11 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		Password: request.Password,
 	})
 
-	data := string(userData.Data)
-	p := preparedata{}
-
-	json.Unmarshal([]byte(data), &p.data)
+	data := userData.Data
 
 	//resData = interface{}
 
-	fmt.Println("Test", data, p.data)
+	fmt.Println("Test", data)
 
 	logData := logger.LogData{}
 	logData.Action = "LOGIN"
@@ -61,7 +57,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	res := response.Response{
 		StatusCode: statusCode,
 		Message:    message, //localize.Trans(message, ""),
-		Data:       userData.Data,
+		Data:       data,
 	}
 
 	logData.Data = res
