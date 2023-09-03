@@ -13,7 +13,6 @@ import (
 	"crypto/rsa"
 	"crypto/x509"
 	"encoding/base64"
-	"encoding/json"
 	"encoding/pem"
 	"fmt"
 	pb "github.com/imrancse94/microservice-pattern/src/protobuf/auth"
@@ -33,8 +32,20 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.Login
 	userData, message := Services.Login(req.Email, req.Password)
 
 	//data := make(map[string]string)
-
-	c, _ := json.Marshal(userData)
+	data := &pb.LoginResponseData{
+		AccessToken:  userData.AccessToken,
+		RefreshToken: userData.RefreshToken,
+		Expire:       userData.Expire,
+		User: &pb.User{
+			Id:        userData.User.ID,
+			Name:      userData.User.Name,
+			CreatedAt: userData.User.CreatedAt,
+			UpdatedAt: userData.User.UpdatedAt,
+		},
+		/*Permission: &pb.Permission{
+			PermissionList: userData.Permissions.PermissionList,
+		}*/
+	}
 
 	fmt.Println("c", userData)
 
@@ -45,7 +56,7 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.Login
 	//data["name"] = req.
 	response := &pb.LoginResponse{
 		Status:  100,
-		Data:    string(c),
+		Data:    data,
 		Message: message,
 	}
 
