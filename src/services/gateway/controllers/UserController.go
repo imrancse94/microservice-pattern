@@ -44,8 +44,6 @@ func Login(w http.ResponseWriter, r *http.Request) {
 
 	//resData = interface{}
 
-	fmt.Println("Test", data)
-
 	logData := logger.LogData{}
 	logData.Action = "LOGIN"
 	//localize.SetLocale("en")

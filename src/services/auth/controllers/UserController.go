@@ -40,7 +40,6 @@ func PreparePermission(p []models.RolePage) []*pb.PermissionAssoc {
 			Submenu:           PreparePermission(s.Submenu),
 		})
 	}
-	fmt.Println("permissionAssoc", permissionAssoc)
 	return permissionAssoc
 }
 
