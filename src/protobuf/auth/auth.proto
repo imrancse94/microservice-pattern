@@ -66,13 +66,13 @@ message LoginResponseData{
   string refresh_token = 2;
   int64 expire = 3;
   User user = 4;
+  Permission permission = 5;
 }
 
 message LoginResponse {
   int64 status = 1;
   string message = 2;
   LoginResponseData data = 3;
-  Permission permission = 4;
 }
 
 // Validate
