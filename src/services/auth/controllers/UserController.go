@@ -26,9 +26,6 @@ type Server struct {
 }
 
 func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.LoginResponse, error error) {
-
-	fmt.Println("Email", req.Email)
-	fmt.Println("Password", req.Password)
 	/*req := mux.Vars(r)
 	fmt.Println("Test Mux", req["id"], req["name"])*/
 	//request := requests.LoginRequest{}
@@ -39,7 +36,7 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (res *pb.Login
 
 	c, _ := json.Marshal(userData)
 
-	fmt.Println("c", string(c))
+	fmt.Println("c", userData)
 
 	//data := make(map[string]string)
 

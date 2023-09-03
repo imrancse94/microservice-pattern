@@ -61,7 +61,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	res := response.Response{
 		StatusCode: statusCode,
 		Message:    message, //localize.Trans(message, ""),
-		Data:       p.data,
+		Data:       userData.Data,
 	}
 
 	logData.Data = res

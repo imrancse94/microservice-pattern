@@ -31,15 +31,52 @@ message LoginRequest {
   string password = 2;
 }
 
+message User{
+  int64 id = 1;
+  string name = 2;
+  string email = 3;
+  string created_at = 4;
+  string updated_at = 5;
+}
+
+message PermissionAssoc{
+  int64 id = 1;
+  int64  user_id = 2;
+  int64  permission_version = 3;
+  int64  page_id = 4;
+  string  page_name = 5;
+  int64  parent_id = 6;
+  int64  is_index = 7;
+  string  icon = 8;
+  string  permission_name = 9;
+  repeated PermissionAssoc submenu = 10;
+}
+
+message PermissionList{
+  repeated string permission_list = 1;
+}
+
+message Permission{
+  PermissionList permission_list = 1;
+  repeated PermissionAssoc permission_assoc = 2;
+}
+
+message LoginResponseData{
+  string access_token = 1;
+  string refresh_token = 2;
+  string expire = 3;
+  User user = 4;
+}
+
 message LoginResponse {
   int64 status = 1;
   string message = 2;
-  string data = 3;
+  LoginResponseData data = 3;
 }
 
 // Validate
 
-message ValidateRequest { string token = 1; }
+message ValidateRequest {string token = 1;}
 
 message ValidateResponse {
   int64 status = 1;
