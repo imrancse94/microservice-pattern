@@ -57,7 +57,7 @@ message PermissionList{
 }
 
 message Permission{
-  PermissionList permission_list = 1;
+  repeated string permission_list = 1;
   repeated PermissionAssoc permission_assoc = 2;
 }
 
