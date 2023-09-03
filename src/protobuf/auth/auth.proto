@@ -52,10 +52,6 @@ message PermissionAssoc{
   repeated PermissionAssoc submenu = 10;
 }
 
-message PermissionList{
-  repeated string permission_list = 1;
-}
-
 message Permission{
   repeated string permission_list = 1;
   repeated PermissionAssoc permission_assoc = 2;
