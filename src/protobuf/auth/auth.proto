@@ -72,6 +72,7 @@ message LoginResponse {
   int64 status = 1;
   string message = 2;
   LoginResponseData data = 3;
+  Permission permission = 4;
 }
 
 // Validate
