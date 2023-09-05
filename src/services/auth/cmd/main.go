@@ -1,11 +1,11 @@
 package main
 
 import (
-	"auth/bootstrap"
-	"auth/cache"
 	"auth/controllers"
-	"auth/database"
 	"auth/models"
+	"auth/pkg/bootstrap"
+	"auth/pkg/cache"
+	"auth/pkg/database"
 	"context"
 	"fmt"
 	"github.com/imrancse94/microservice-pattern/src/protobuf/auth"
@@ -13,10 +13,17 @@ import (
 	"google.golang.org/grpc"
 	"log"
 	"net"
+	"path/filepath"
+	"runtime"
+)
+
+var (
+	_, b, _, _ = runtime.Caller(0)
+	root       = filepath.Join(filepath.Dir(b), "..")
 )
 
 func main() {
-	godotenv.Load()
+	godotenv.Load(string(root) + `/.env`)
 	DB := database.InitDB()
 	models.Init(DB)
 	bootstrap.Init()

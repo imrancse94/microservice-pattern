@@ -1,7 +1,7 @@
 package localize
 
 import (
-	"auth/cache"
+	"auth/pkg/cache"
 	"encoding/json"
 	"fmt"
 	"github.com/nicksnyder/go-i18n/v2/i18n"

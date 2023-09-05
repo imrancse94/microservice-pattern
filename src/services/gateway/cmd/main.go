@@ -2,14 +2,21 @@ package main
 
 import (
 	"fmt"
-	"gateway/bootstrap"
+	"gateway/pkg/bootstrap"
 	"github.com/joho/godotenv"
 	"net/http"
 	"os"
+	"path/filepath"
+	"runtime"
+)
+
+var (
+	_, b, _, _ = runtime.Caller(0)
+	root       = filepath.Join(filepath.Dir(b), "..")
 )
 
 func main() {
-	godotenv.Load()
+	godotenv.Load(string(root) + `/.env`)
 	//DB := database.InitDB()
 	//models.Init(DB)
 	bootstrap.Init()

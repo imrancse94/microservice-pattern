@@ -3,10 +3,10 @@ package controllers
 import (
 	"auth/Helper"
 	"auth/constant"
-	"auth/localize"
 	"auth/models"
+	"auth/pkg/localize"
+	"auth/pkg/response"
 	"auth/requests"
-	"auth/response"
 	Services "auth/services"
 	"context"
 	"crypto/rand"

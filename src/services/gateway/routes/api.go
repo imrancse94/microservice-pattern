@@ -2,8 +2,8 @@ package routes
 
 import (
 	"gateway/controllers"
-	"gateway/gate"
 	"gateway/middleware"
+	"gateway/pkg/gate"
 	"gateway/requests"
 )
 

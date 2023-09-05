@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"gateway/constant"
-	"gateway/gate"
-	"gateway/response"
+	"gateway/pkg/gate"
+	"gateway/pkg/response"
 	Services "gateway/services"
 	"net/http"
 	"strconv"

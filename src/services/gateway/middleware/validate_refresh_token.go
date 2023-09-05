@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"gateway/Helper"
-	"gateway/gate"
 	"gateway/models"
+	"gateway/pkg/gate"
 	"gateway/requests"
 	Services "gateway/services"
 	"net/http"

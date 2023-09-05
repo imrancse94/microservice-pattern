@@ -1,10 +1,10 @@
 package bootstrap
 
 import (
-	"auth/gate"
-	"auth/middleware"
-	"auth/requests"
-	"auth/routes"
+	"gateway/middleware"
+	"gateway/pkg/gate"
+	"gateway/requests"
+	"gateway/routes"
 	"github.com/gorilla/mux"
 	"net/http"
 )

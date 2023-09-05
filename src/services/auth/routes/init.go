@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"auth/gate"
+	"auth/pkg/gate"
 	"net/http"
 )
 

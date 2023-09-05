@@ -3,10 +3,10 @@ package controllers
 import (
 	"gateway/Helper"
 	"gateway/constant"
-	"gateway/localize"
 	"gateway/models"
+	"gateway/pkg/localize"
+	"gateway/pkg/response"
 	"gateway/requests"
-	"gateway/response"
 	"net/http"
 )
 

@@ -9,13 +9,13 @@ import (
 	"fmt"
 	"gateway/Helper"
 	"gateway/constant"
-	"gateway/grpc/auth"
+	"gateway/pkg/grpc/auth"
+	"gateway/pkg/localize"
+	"gateway/pkg/logger"
+	"gateway/pkg/response"
 
-	"gateway/localize"
-	"gateway/logger"
 	"gateway/models"
 	"gateway/requests"
-	"gateway/response"
 	Services "gateway/services"
 	pb "github.com/imrancse94/microservice-pattern/src/protobuf/auth"
 	"golang.org/x/net/context"
@@ -39,7 +39,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		Email:    request.Email,
 		Password: request.Password,
 	})
-
+	fmt.Println("userData", userData)
 	data := userData.Data
 
 	//resData = interface{}

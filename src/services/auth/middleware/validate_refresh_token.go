@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"auth/Helper"
-	"auth/gate"
 	"auth/models"
+	"auth/pkg/gate"
 	"auth/requests"
 	Services "auth/services"
 	"net/http"

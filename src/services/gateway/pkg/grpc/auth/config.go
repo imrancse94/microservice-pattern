@@ -1,4 +1,4 @@
-package config
+package auth
 
 type configParams struct {
 	Port   string

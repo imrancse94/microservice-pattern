@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"auth/gate"
+	"auth/pkg/gate"
 	"log"
 	"net/http"
 	"time"

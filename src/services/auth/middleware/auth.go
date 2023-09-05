@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"auth/constant"
-	"auth/gate"
-	"auth/response"
+	"auth/pkg/gate"
+	"auth/pkg/response"
 	Services "auth/services"
 	"net/http"
 	"strconv"

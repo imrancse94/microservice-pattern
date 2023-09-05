@@ -3,8 +3,8 @@ package requests
 //https://pkg.go.dev/github.com/asaskevich/govalidator
 import (
 	"auth/constant"
-	"auth/gate"
-	"auth/response"
+	"auth/pkg/gate"
+	response2 "auth/pkg/response"
 	"bytes"
 	"encoding/json"
 	"errors"
@@ -67,7 +67,7 @@ func Validation(data interface{}) gate.Middleware {
 			if err != nil {
 				//http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
 				//fmt.Fprint(w, err.(error).Error())
-				response.ErrorResponse(response.ErrorResponseStruct{
+				response2.ErrorResponse(response2.ErrorResponseStruct{
 					StatusCode: constant.Status("VALIDATION_ERROR"),
 					Message:    "Validation Error",
 					Error:      err,

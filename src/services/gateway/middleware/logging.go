@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"gateway/gate"
+	"gateway/pkg/gate"
 	"log"
 	"net/http"
 	"time"

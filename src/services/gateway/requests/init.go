@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"errors"
 	"gateway/constant"
-	"gateway/gate"
-	"gateway/response"
+	"gateway/pkg/gate"
+	response2 "gateway/pkg/response"
 	"github.com/asaskevich/govalidator"
 	"io"
 	"io/ioutil"
@@ -67,7 +67,7 @@ func Validation(data interface{}) gate.Middleware {
 			if err != nil {
 				//http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
 				//fmt.Fprint(w, err.(error).Error())
-				response.ErrorResponse(response.ErrorResponseStruct{
+				response2.ErrorResponse(response2.ErrorResponseStruct{
 					StatusCode: constant.Status("VALIDATION_ERROR"),
 					Message:    "Validation Error",
 					Error:      err,
