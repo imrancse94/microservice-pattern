@@ -26,6 +26,8 @@ services:
     build:
       context: ./src/services/auth/ # Use an image built from the specified dockerfile in the current directory.
       dockerfile: Dockerfile
+    volumes:
+      - ./src/services/auth/.env.example:/app/services/auth/.env
     restart: unless-stopped
     depends_on:
       - redis # This service depends on redis. Start that first.
