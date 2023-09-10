@@ -43,7 +43,7 @@ func main() {
 	http.ListenAndServe(":"+PORT, nil)*/
 	fmt.Println("This is auth")
 
-	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", 9000))
+	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", 3000))
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}

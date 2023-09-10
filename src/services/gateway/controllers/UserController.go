@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"context"
 	"crypto/rand"
 	"crypto/rsa"
 	"crypto/x509"
@@ -13,19 +14,14 @@ import (
 	"gateway/pkg/localize"
 	"gateway/pkg/logger"
 	"gateway/pkg/response"
+	pb "github.com/imrancse94/microservice-pattern/src/protobuf/auth"
 
 	"gateway/models"
 	"gateway/requests"
 	Services "gateway/services"
-	pb "github.com/imrancse94/microservice-pattern/src/protobuf/auth"
-	"golang.org/x/net/context"
 	"net/http"
 	"strconv"
 )
-
-type preparedata struct {
-	data interface{}
-}
 
 func Login(w http.ResponseWriter, r *http.Request) {
 	/*req := mux.Vars(r)
@@ -39,22 +35,22 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		Email:    request.Email,
 		Password: request.Password,
 	})
-	fmt.Println("userData", userData)
+
+	//fmt.Println("userData", userData)
 	data := userData.Data
-
+	//data := make(map[int]interface{})
 	//resData = interface{}
-
 	logData := logger.LogData{}
 	logData.Action = "LOGIN"
-	//localize.SetLocale("en")
+	localize.SetLocale("en")
 	message := "Login success"
 	statusCode := constant.Status("FAILED")
-	if err != nil {
+	if err == nil {
 		statusCode = constant.Status("SUCCESS")
 	}
 	res := response.Response{
 		StatusCode: statusCode,
-		Message:    message, //localize.Trans(message, ""),
+		Message:    localize.Trans(message, ""),
 		Data:       data,
 	}
 
@@ -66,14 +62,10 @@ func Login(w http.ResponseWriter, r *http.Request) {
 }
 
 func AuthData(w http.ResponseWriter, r *http.Request) {
-	id, _ := strconv.Atoi(r.Header.Get("auth_id"))
-	user := models.GetUserById(id)
+	/*id, _ := strconv.Atoi(r.Header.Get("auth_id"))
+	user := models.GetUserById(id)*/
 	//fmt.Println("Token", id)
-	var data = map[string]interface{}{
-		"access_token": Helper.ExtractToken(r.Header.Get("Authorization")),
-		"user":         user,
-		"permissions":  Services.GetPermissionByUserId(id),
-	}
+	var data = map[string]interface{}{}
 	res := response.Response{
 		StatusCode: constant.Status("SUCCESS"),
 		Message:    localize.Trans("Auth data fetched successfully", ""),

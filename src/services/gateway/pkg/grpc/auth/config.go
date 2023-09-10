@@ -7,7 +7,7 @@ type configParams struct {
 
 func Config() configParams {
 	return configParams{
-		Port:   "9000",
-		Domain: "localhost", //localhost
+		Port:   "3000",
+		Domain: "auth", //localhost
 	}
 }

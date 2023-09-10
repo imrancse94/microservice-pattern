@@ -1,8 +1,10 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"gateway/pkg/bootstrap"
+	"gateway/pkg/cache"
 	"github.com/joho/godotenv"
 	"net/http"
 	"os"
@@ -26,8 +28,8 @@ func main() {
 	//ttl := handlers.MaxAge(3600)
 	//headers := handlers.AllowedHeaders([]string{"content-type"})
 	//origins := handlers.AllowedOrigins([]string{"localhost:3000"})
-	//cache.ConnectRedis(context.Background())
-	fmt.Println("Removed cache")
+	cache.ConnectRedis(context.Background())
+
 	//mail.SendEmail("My subject", "This is test", "", []string{"abquddus.ctg@gmail.com", "jesse.miller.2022.smtp@gmail.com"}, "test.txt")
 
 	PORT := os.Getenv("APP_PORT")
